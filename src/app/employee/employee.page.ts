@@ -11,7 +11,7 @@ import { ToastService } from '../service/toast/toast.service';
   styleUrls: ['./employee.page.scss'],
 })
 export class EmployeePage implements OnInit {
-  private employeeList: string[];
+  public employeeList = [];
   constructor(
     private getEmployeesService: GetEmployeesService,
     private loadingService: LoadingService,
@@ -32,6 +32,7 @@ export class EmployeePage implements OnInit {
       });
 
       this.employeeList = res['data'];
+
       // this.navCtrl.navigateRoot('/welcome');
     });
   }

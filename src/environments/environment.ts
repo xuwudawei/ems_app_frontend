@@ -4,10 +4,10 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:4000/api/employee'
+  apiUrl: 'https://ems-xuwudawei.herokuapp.com/api/employee',
 };
 
-/*
+/*s
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
  *

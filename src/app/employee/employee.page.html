@@ -1,14 +1,37 @@
 <ion-header>
-  <ion-toolbar >
+  <ion-toolbar>
     <ion-back-button defaultHref="/landing" slot="start"></ion-back-button>
     <ion-title class="ion-text-center">List of Employees</ion-title>
   </ion-toolbar>
-
 </ion-header>
-<ion-content class="ion-padding">
+
+<ion-content
+  *ngIf="this.employeeList !== null && this.employeeList.length === 0"
+>
+  <div>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title class="ion-text-center"> Welcome! </ion-card-title>
+        <ion-card-subtitle class="ion-text-center">
+          No Employee Found
+        </ion-card-subtitle>
+      </ion-card-header>
+    </ion-card>
+  </div>
+</ion-content>
+<ion-content
+  class="ion-padding"
+  *ngIf="this.employeeList !== null && this.employeeList.length !== 0"
+>
   <ion-grid>
     <ion-row>
-      <ion-col sizeLg="4" sizeMd="4" sizeXs="12" [sizeSm]="6" *ngFor="let employee of employeeList">
+      <ion-col
+        sizeLg="4"
+        sizeMd="4"
+        sizeXs="12"
+        [sizeSm]="6"
+        *ngFor="let employee of employeeList"
+      >
         <ion-card>
           <div class="ion-padding">
             <div class="back-container">
